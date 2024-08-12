@@ -1,0 +1,36 @@
+{
+    "format_version": 2,
+    "header": {
+        "name": "Anvil Repairing RP 1.0.0 [DEBUG]",
+        "description": "Repair your anvils with as simple as iron ingots to extend its lifespan, and use hammer to damage it without breaking the block.\n @Made By: https://twitter.com/h_YanG_0A",
+        "uuid": "13d7cd65-887f-4d74-87cd-c4c7595062b2",
+        "version": [
+            1,
+            0,
+            0
+        ],
+        "min_engine_version": [
+            1,
+            20,
+            1
+        ]
+    },
+    "modules": [
+        {
+            "type": "resources",
+            "uuid": "efcfe7ce-96e6-4c23-b04d-c22e3488325f",
+            "version": [
+                1,
+                0,
+                0
+            ]
+        }
+    ],
+    "metadata": {
+        "authors": [
+            "@h_YanG_0A"
+        ],
+        "license": "GPL-3.0-or-later",
+        "url": "https://twitter.com/h_YanG_0A"
+    }
+}

@@ -1,0 +1,59 @@
+{
+	"format_version": 2,
+	"header": {
+		"bp_name": "Anvil Repairing BP",
+		"rp_name": "Anvil Repairing RP",
+		"description": "Repair your anvils with as simple as iron ingots to extend its lifespan, and use hammer to damage it without breaking the block.\n @Made By: https://twitter.com/h_YanG_0A",
+		"bp_uuid": "8699f58d-1fa2-4af6-85cb-1cbe713d2511",
+		"rp_uuid": "f7ea8b5b-c129-4ab7-b813-3120c4adba6c",
+		"version": [1, 0, 0],
+		"min_engine_version": [ 1, 20, 1 ]
+	},
+	"bp_modules": [
+		{
+			"description": "item and entity definitions",
+			"type": "data",
+			"uuid": "f0bc63f7-f2b2-4de2-a27c-6a3d5ac7cee4",
+			"version": [ 1, 0, 0 ]
+		},
+		{
+			"description": "scripts",
+			"type": "script",
+			"language": "javascript",
+			"uuid": "253aabda-5a62-4027-aab9-fbaa369f28e0",
+			"version": [ 1, 0, 0 ],
+			"entry": "scripts/main.js"
+		}
+	],
+	"bp_capabilities": [ "script_eval" ],
+    "rp_modules": [
+		{
+			"type": "resources",
+			"uuid": "efcfe7ce-96e6-4c23-b04d-c22e3488325f",
+			"version": [ 1, 0, 0 ]
+		}
+	],
+	"bp_dependencies": [
+		{
+			"module_name": "@minecraft/server",
+			"version": "1.11.0"
+		},
+		{
+			"module_name": "@minecraft/server-ui",
+			"version": "1.1.0"
+		}
+	],
+	"bp_server_dependencies": [
+		{
+			"module_name": "@minecraft/server-admin",
+			"version": "1.0.0-beta"
+		}
+	],
+	"metadata": {
+		"authors": [
+			"@h_YanG_0A"
+		],
+		"license": "GPL-3.0-or-later",
+		"url": "https://twitter.com/h_YanG_0A"
+	}
+}
