@@ -1,30 +1,26 @@
-import { Player } from '@minecraft/server';
-import { CommandHandler} from './command_handler';
-import { ICommandBase } from './ICommandBase';
+import { CommandHandler } from './command_handler';
 import { ADDON_NAME } from 'constant';
-
-const importCommand = async (player: Player, commandName: string): Promise<ICommandBase> => {
+const importCommand = async (player, commandName) => {
     try {
         const importedCommandModule = await import(`./${commandName}.js`);
         return importedCommandModule.default;
-    } catch (error) {
+    }
+    catch (error) {
         player.sendMessage(`§cError while fetching ${commandName} command: ${error.message}`);
         return null;
     }
 };
-
 const details = {
     __addonName__: ADDON_NAME,
     __name__: 'help',
     __description__: 'Displays the help message.',
     __format__: '[<commandName: string>?]',
-}
-
-const command: ICommandBase = {
+};
+const command = {
     name: details.__name__,
     description: details.__description__,
     format: details.__format__,
-    usage(): string {
+    usage() {
         return (`Format:
         > ${CommandHandler.prefix}${this.name} ${this.format}
         Usage:
@@ -34,15 +30,18 @@ const command: ICommandBase = {
     },
     async execute(player, args) {
         if (!args || args.length === 0) {
-            let helpMessage: string = `\n§aCommands available @ ${details.__addonName__}: \n`;
+            let helpMessage = `\n§aCommands available @ ${details.__addonName__}: \n`;
             for (const commandName of CommandHandler.commands) {
                 const importedCommand = await importCommand(player, commandName);
-                if (importedCommand) helpMessage += `§e${CommandHandler.prefix}${commandName}§r${importedCommand.format.length ? " " + importedCommand.format : ""} - ${importedCommand.description}\n`;
+                if (importedCommand)
+                    helpMessage += `§e${CommandHandler.prefix}${commandName}§r${importedCommand.format.length ? " " + importedCommand.format : ""} - ${importedCommand.description}\n`;
             }
             player.sendMessage(helpMessage);
-        } else {
+        }
+        else {
             const specifiedCommand = args[0].toLowerCase();
-            if(!CommandHandler.commands.includes(specifiedCommand)) return player.sendMessage(`§cInvalid command specified: ${specifiedCommand}`);
+            if (!CommandHandler.commands.includes(specifiedCommand))
+                return player.sendMessage(`§cInvalid command specified: ${specifiedCommand}`);
             if (CommandHandler.commands.includes(specifiedCommand)) {
                 const importedCommand = await importCommand(player, specifiedCommand);
                 if (importedCommand) {
@@ -51,6 +50,5 @@ const command: ICommandBase = {
             }
         }
     }
-}
-
+};
 export default command;

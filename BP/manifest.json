@@ -3,7 +3,7 @@
     "header": {
         "name": "Anvil Repairing BP 1.0.0 [DEBUG]",
         "description": "Repair your anvils with as simple as iron ingots to extend its lifespan, and use hammer to damage it without breaking the block.\n @Made By: https://twitter.com/h_YanG_0A",
-        "uuid": "38e85a3b-4d2a-4980-894d-65778f80b8ae",
+        "uuid": "8699f58d-1fa2-4af6-85cb-1cbe713d2511",
         "version": [
             1,
             0,
@@ -45,7 +45,7 @@
     "dependencies": [
         {
             "module_name": "@minecraft/server",
-            "version": "1.11.0"
+            "version": "1.12.0-beta"
         },
         {
             "module_name": "@minecraft/server-ui",
@@ -56,7 +56,7 @@
             "version": "1.0.0-beta"
         },
         {
-            "uuid": "13d7cd65-887f-4d74-87cd-c4c7595062b2",
+            "uuid": "f7ea8b5b-c129-4ab7-b813-3120c4adba6c",
             "version": [
                 1,
                 0,
