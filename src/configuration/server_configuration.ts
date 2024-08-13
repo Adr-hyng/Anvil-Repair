@@ -2,7 +2,11 @@ export default {
   /**
    * Enables debug messages to content logs.
    */
-  debug: true,
+  debug: false,
+  /**
+   * The amount of iron ingots required in order to repair an anvil.
+   */
+  IronIngotsRequired: 1,
 };
 
 // version (do not change)

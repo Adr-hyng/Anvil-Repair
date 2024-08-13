@@ -1,8 +1,3 @@
-import { JsonDatabase } from "./utils/Database/con-database";
-export const ADDON_NAMESPACE = "yn";
-export const ADDON_NAME = "ANVIL_REPAIR";
-export const ADDON_IDENTIFIER = `${ADDON_NAMESPACE}:anvrep`;
-export const db = new JsonDatabase(ADDON_NAME);
 export var AnvilDamageStates;
 (function (AnvilDamageStates) {
     AnvilDamageStates["UNDAMAGED"] = "undamaged";

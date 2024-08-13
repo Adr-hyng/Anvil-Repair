@@ -1,3 +1,6 @@
 {
-  
+  "IronIngotsRequired": {
+    "description": "The amount of iron ingots required in order to repair an anvil.",
+    "default": 1
+  }
 }

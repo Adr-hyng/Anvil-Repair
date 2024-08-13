@@ -1,4 +1,13 @@
 export default {
-    debug: true,
+  /**
+   * Enables debug messages to content logs.
+   */
+  debug: false,
+  /**
+   * The amount of iron ingots required in order to repair an anvil.
+   */
+  IronIngotsRequired: 1,
 };
+
+// version (do not change)
 export const VERSION = "1.0.0";

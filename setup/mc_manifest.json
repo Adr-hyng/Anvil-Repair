@@ -3,7 +3,7 @@
 	"header": {
 		"bp_name": "Anvil Repairing BP",
 		"rp_name": "Anvil Repairing RP",
-		"description": "Repair your anvils with as simple as iron ingots to extend its lifespan, and use hammer to damage it without breaking the block.\n @Made By: https://twitter.com/h_YanG_0A",
+		"description": "Repair your anvils with as simple as iron ingots to extend its lifespan. \n @Made By: https://twitter.com/h_YanG_0A",
 		"bp_uuid": "8699f58d-1fa2-4af6-85cb-1cbe713d2511",
 		"rp_uuid": "f7ea8b5b-c129-4ab7-b813-3120c4adba6c",
 		"version": [1, 0, 0],

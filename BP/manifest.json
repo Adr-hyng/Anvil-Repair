@@ -1,8 +1,8 @@
 {
     "format_version": 2,
     "header": {
-        "name": "Anvil Repairing BP 1.0.0 [DEBUG]",
-        "description": "Repair your anvils with as simple as iron ingots to extend its lifespan, and use hammer to damage it without breaking the block.\n @Made By: https://twitter.com/h_YanG_0A",
+        "name": "Anvil Repairing BP 1.0.0",
+        "description": "Repair your anvils with as simple as iron ingots to extend its lifespan. \n @Made By: https://twitter.com/h_YanG_0A",
         "uuid": "8699f58d-1fa2-4af6-85cb-1cbe713d2511",
         "version": [
             1,
