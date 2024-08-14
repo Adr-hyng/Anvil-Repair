@@ -1,20 +1,22 @@
-import { world, system, BlockPermutation, EntityInventoryComponent} from "@minecraft/server";
+import { world, system, BlockPermutation, EntityInventoryComponent, WorldBeforeEvents, PlayerInteractWithBlockBeforeEvent, PlayerInteractWithBlockBeforeEventSignal, World} from "@minecraft/server";
 
-import { chroma } from "chroma/index";
 import { AnvilDamageStates, AnvilStateTypes } from "./constant";
 import { MinecraftBlockTypes, MinecraftItemTypes } from "vanilla-types/index";
 import configuration from "configuration/server_configuration";
 export const itemInteractedLogMap: Map<string, number> = new Map();
 
-world.afterEvents.worldInitialize.subscribe((e) => {
-  world.sendMessage(chroma.green(`${chroma.bold("Anvil Repair Addon")} has been loaded successfully by Adr-hyng.`));
+// Localization was achieved using google translate, if there's grammar / spelling error, feel free to contribute.
+world.afterEvents.playerSpawn.subscribe((e) => {
+  if(!e.initialSpawn) return;
+  if(!configuration.ShowMessageUponJoin) return;
+  e.player.runCommandAsync(`tellraw ${e.player.name} {"rawtext":[{"translate":"yn.anvil_repair.on_load_message"}]}`);
 });
 
 
-world.beforeEvents.playerInteractWithBlock.subscribe((e) => {
+world.beforeEvents.itemUseOn.subscribe((e) => {
   const blockInteracted = e.block;
   const heldItem = e.itemStack;
-  const player = e.player;
+  const player = e.source;
   if(!heldItem) return;
   if(!heldItem.matches(MinecraftItemTypes.IronIngot)) return;
   if(!blockInteracted.matches(MinecraftBlockTypes.Anvil)) return;
@@ -30,17 +32,18 @@ world.beforeEvents.playerInteractWithBlock.subscribe((e) => {
     const oldLog = itemInteractedLogMap.get(player.id) as number;
     itemInteractedLogMap.set(player.id, Date.now());
     if ((oldLog + 150) >= Date.now()) return;
-    
-    blockInteracted.setPermutation(prevAnvilState);
     e.cancel = true;
     if(heldItem.amount > configuration.IronIngotsRequired) {
-      player.playSound('random.anvil_use');
       heldItem.amount -= configuration.IronIngotsRequired;
       const deductedIronIngot = heldItem.clone();
-      player.getComponent(EntityInventoryComponent.componentId).container.setItem(player.selectedSlotIndex, deductedIronIngot);
-    } else {
-      player.playSound('random.break');
-      player.getComponent(EntityInventoryComponent.componentId).container.setItem(player.selectedSlotIndex, undefined);
+      (player.getComponent(EntityInventoryComponent.componentId) as EntityInventoryComponent).container.setItem(player.selectedSlotIndex, deductedIronIngot);
+    } else if (heldItem.amount < configuration.IronIngotsRequired) {
+      player.runCommandAsync(`tellraw ${player.name} {"rawtext":[{"translate": "yn.anvil_repair.insufficient_message", "with": [ "${configuration.IronIngotsRequired - heldItem.amount}" ]}]}`);
+      return;
+    } else if (heldItem.amount === configuration.IronIngotsRequired) {
+      (player.getComponent(EntityInventoryComponent.componentId) as EntityInventoryComponent).container.setItem(player.selectedSlotIndex, undefined);
     }
+    blockInteracted.setPermutation(prevAnvilState);
+    player.playSound('random.anvil_use');
   });
 });

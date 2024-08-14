@@ -1,0 +1,2 @@
+yn.anvil_repair.on_load_message=§a§lДополнение для ремонта наковальни§r §aуспешно загружено. Создано Adr-hyng.
+yn.anvil_repair.insufficient_message=§c§lНедостаточно материалов: §r §cВам нужно %1 железных слитков, чтобы починить эту наковальню.

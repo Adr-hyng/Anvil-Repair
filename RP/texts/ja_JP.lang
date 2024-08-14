@@ -1,0 +1,2 @@
+yn.anvil_repair.on_load_message=§a§l金床修理アドオン§r §aが正常に読み込まれました。Adr-hyngによって作成されました。
+yn.anvil_repair.insufficient_message=§c§l材料が不足しています: §r §cこの金床を修理するには%1個の鉄インゴットが必要です。
