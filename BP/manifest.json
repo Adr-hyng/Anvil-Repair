@@ -1,18 +1,18 @@
 {
     "format_version": 2,
     "header": {
-        "name": "Anvil Repairing BP 1.0.0 [DEBUG]",
+        "name": "Anvil Repairing BP 1.0.1",
         "description": "Repair your anvils with as simple as iron ingots to extend its lifespan. \n @Made By: https://twitter.com/h_YanG_0A",
         "uuid": "8699f58d-1fa2-4af6-85cb-1cbe713d2511",
         "version": [
             1,
             0,
-            0
+            1
         ],
         "min_engine_version": [
             1,
-            20,
-            1
+            21,
+            0
         ]
     },
     "modules": [
@@ -52,15 +52,11 @@
             "version": "1.2.0"
         },
         {
-            "module_name": "@minecraft/server-admin",
-            "version": "1.0.0-beta"
-        },
-        {
             "uuid": "f7ea8b5b-c129-4ab7-b813-3120c4adba6c",
             "version": [
                 1,
                 0,
-                0
+                1
             ]
         }
     ],

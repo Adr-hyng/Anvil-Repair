@@ -1,7 +1,7 @@
 {
   "IronIngotsRequired": {
     "description": "The amount of iron ingots required in order to repair an anvil.",
-    "default": 3
+    "default": 1
   },
   "ShowMessageUponJoin": {
     "description": "Shows the script initialization message log upon player joining, default is true.",

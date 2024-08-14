@@ -6,8 +6,8 @@
 		"description": "Repair your anvils with as simple as iron ingots to extend its lifespan. \n @Made By: https://twitter.com/h_YanG_0A",
 		"bp_uuid": "8699f58d-1fa2-4af6-85cb-1cbe713d2511",
 		"rp_uuid": "f7ea8b5b-c129-4ab7-b813-3120c4adba6c",
-		"version": [1, 0, 0],
-		"min_engine_version": [ 1, 20, 1 ]
+		"version": [1, 0, 1],
+		"min_engine_version": [ 1, 21, 0 ]
 	},
 	"bp_modules": [
 		{
@@ -41,12 +41,6 @@
 		{
 			"module_name": "@minecraft/server-ui",
 			"version": "1.2.0"
-		}
-	],
-	"bp_server_dependencies": [
-		{
-			"module_name": "@minecraft/server-admin",
-			"version": "1.0.0-beta"
 		}
 	],
 	"metadata": {
